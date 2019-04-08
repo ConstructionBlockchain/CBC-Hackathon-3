@@ -1,0 +1,94 @@
+namespace org.example.scopetracking
+
+asset Work identified by workId {
+ o String workId
+ o String description
+ o Integer stage
+ o Boolean stageComplete
+ --> Contract contract
+}
+
+asset Contract identified by contractId {
+ o String contractId
+ o Integer stagePayment default = 100
+ o Double retention default = 0.05
+ o Integer deductions default = 0
+ o Integer lossExpenses default = 0
+}
+
+asset Account identified by accountID {
+  o String accountID
+  o Integer amount default = 1000
+--> Person owner
+}
+
+abstract participant Person identified by personId {
+  o String personId
+  o String firstName
+  o String lastName
+}  
+
+/**
+ * An Employer is a type of participant in the network
+ */
+participant Employer extends Person {
+}
+
+/**
+ * A Contractor is a type of participant in the network
+ */
+participant Contractor extends Person {
+}
+
+/**
+ * An Agent is a type of participant in the network
+ */
+participant Agent extends Person {
+}
+  
+transaction CompleteWork {
+  --> Work work
+}
+
+event CompleteWorkEvent {
+  --> Work work  
+}
+  
+transaction ReleasePayment {
+  --> Work work
+  --> Account contractorAccount 
+  --> Account employerAccount
+  --> Account retentionAccount
+  --> Contract contract
+}
+  
+event ReleasePaymentEvent {
+  --> Work work
+  --> Contract contract
+}  
+
+// The stage of work being performed 
+// Not yet implemented
+enum StageType {
+  o Strategic_def
+  o Prep_and_debrief
+  o Concept_design
+  o Developed_design
+  o Technical_design
+  o Construction
+  o Handover_closeout
+  o In_use
+}
+
+transaction CreateEmployer {
+    o String newpersonId
+    o String newfirstName
+    o String newlastName
+}
+
+
+// Not yet implemented
+transaction SetupDemo  {
+}
+  
+

@@ -1,0 +1,11 @@
+ query selectRetentionAccount {
+  description: "Select Retention Account"
+  statement: SELECT org.example.scopetracking.Account
+              WHERE (accountID == 'AGENT1_ACC')
+ }
+
+ query selectEmployer1 {
+  description: "Select Accounts owned by EMPLOYER_1"
+  statement: SELECT org.example.scopetracking.Employer
+              WHERE (personId == 'EMPLOYER_1')
+ }
