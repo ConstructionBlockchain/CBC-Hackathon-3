@@ -2,6 +2,7 @@
 
 > This network allows for a contract to be established between a Contractor and Employer which details payment terms and for this contract to be associated with a scope of work. It then facilitates the tracking of completion of stages of the work and for the associated payment as per the terms of the contract.
 
+
 This business network defines:
 
 **Participants**
@@ -77,3 +78,7 @@ Copyright [2019] [Blocks and Mortar Ltd]
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+
+ ## History  
+   
+   This network was orginally selected as winner of the Smart Procurement Toolkit for the AEC Industry Construction Blockchain Consortium Hackathon 2019 (https://www.constructionblockchain.org/20190207-hackathon/). It has subsequently been further developed to improve functionality.
